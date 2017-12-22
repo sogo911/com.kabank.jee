@@ -1,0 +1,5 @@
+@charset "UTF-8";
+#join_second_header{height: 80px; text-align: center;}
+#join_table{border: solid red 1px; margin: auto; }
+#join_table tr{border: solid red 1px;}
+#join_table tr td{border: solid red 1px;}

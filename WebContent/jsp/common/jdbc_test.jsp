@@ -16,11 +16,11 @@
 				("jdbc:oracle:thin:@localhost:1521:xe","bitcamp","bitcamp");
 		
 		Statement stmt = conn.createStatement();
-		String sql = "SELECT COUNT (*) AS count FROM tab";
+		String sql = "SELECT * FROM tab";
 		ResultSet rs = stmt.executeQuery(sql); // 익스큐트쿼리 (실행하다.)
 		
 		while(rs.next()){
-			count = rs.getString("count");  // 겟 스트링 (결과 전송)
+			count = rs.getString("tname");  // 겟 스트링 (결과 전송)
 		}
 	%>
 	테이블 갯수는 <%= count %> 입니다.

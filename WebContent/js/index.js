@@ -29,14 +29,14 @@ function goAdmin() {
 	var admin = prompt('이름 ?');
 	if (admin) {
 		alert('안녕하세요 관리자님');
-		location.href = ("bugerking/main.jsp");   // 이방식을 통해서 URL을 옮기게 한다.
+		location.href = ("admin/main.jsp");   // 이방식을 통해서 URL을 옮기게 한다.
 	}else
 		alert('관리자만 접근이 가능 합니다.');
 }
 function goJoin() {
 	location.href = ("member/join.jsp"); 
 }
-window.addEventListener("load",init,false)
+window.addEventListener("load",init,false);
 
 
 

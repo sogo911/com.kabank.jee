@@ -3,9 +3,7 @@
 #admin_aside{float: left ; width: 150px; height: 600px ; border : solid red;}
 #admin_section{width: 960px; height: 600px; border : solid red;}
 #admin_section_table{width: 600px; height: 200px; margin : 10% auto;}
-table, tr{text-align: center; }
-th{border : solid red;}
-td{width: 100px; text-align: center;border : solid red;}
+table, tr td{text-align: left; }
+td{width: auto; border : solid red; text-align: left;}
 #go_admin_create_btn{width:100%; height:100%}
-#add_member_td{text-align: right; border : 0}
-#member_search{border : 0}
+#add_member_td{text-align: right; border : 0;}

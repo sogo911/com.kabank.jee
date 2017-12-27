@@ -41,7 +41,7 @@
 				<tr>
 					<td>비밀번호</td>
 					<td>
-					 	<input id=join_pass pattern="[0-9]{4} type="password" name="pass" required/> 
+					 	<input id=join_pass pattern="[0-9]{4}" type="password" name="pass" required/> 
 					 	* 비밀번호는 숫자로만 4자리 입니다.
 					</td>
 				</tr>

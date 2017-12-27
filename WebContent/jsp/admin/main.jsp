@@ -9,25 +9,25 @@
 </head>
 <body>
 <div id="wrapper">
-	<header style= "text-align: center">
+	<header id="admin_header">
 		<h1 >관리자페이지 메인</h1>
 	</header>
-	<aside style= " float: left ; width: 150px; height: 600px ; border : solid red ;">
+	<aside id="admin_aside">
 		<button>회원관리</button>
 	</aside>
-	<section style="width: 960px; height: 600px; border : solid red">
-		<table style= "width: 600px; height: 200px ; border : solid red ; margin : 10% auto " >
-			<tr style= "border : solid red ">
-				<td style= "width: 100px; text-align: center; border : solid red">
+	<section id="admin_section">
+		<table id="admin_section_table">
+			<tr>
+				<td>
 				<button>테이블 생성</button>
 				</td>
-				<td style= "width: 100px; text-align: center; border : solid red ">준비중</td>
-				<td style= "width: 100px; text-align: center; border : solid red ">준비중</td>
+				<td>준비중</td>
+				<td>준비중</td>
 			</tr>
-			<tr style= "text-align: center; border : solid red ">
-				<td style= "width: 100px; text-align: center; border : solid red ">준비중</td>
-				<td style= "width: 100px; text-align: center; border : solid red ">준비중</td>
-				<td style= "width: 100px; text-align: center; border : solid red ">준비중</td>
+			<tr>
+				<td>준비중</td>
+				<td>준비중</td>
+				<td>준비중</td>
 			</tr>
 		</table>
 	</section>

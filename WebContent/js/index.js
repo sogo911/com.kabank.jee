@@ -34,7 +34,7 @@ function goAdmin() {
 		alert('관리자만 접근이 가능 합니다.');
 }
 function goJoin() {
-	location.href = ("member/join.jsp"); 
+	location.href = ("user/join.jsp"); 
 }
 window.addEventListener("load",init,false);
 

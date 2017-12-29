@@ -22,12 +22,12 @@
 				</hgroup>
 			</header>
 		</article>
-		<form action="../index.jsp">
+		<form id="join_form" action="join.jsp">
 			<table id="join_table">
 				<tr>
 					<td>아이디</td>
 					<td>
-						<input  id=join_id name="join_id" type="text" required/>
+						<input  id=join_id name="id" type="text" required/>
 						<button id="id_check_dupl_btn" name="id_check_dupl_btn" >아이디 중복 확인</button>
 					</td>
 				</tr>
@@ -54,8 +54,8 @@
 				<tr>
 					<td>이메일</td>
 					<td>
-						<input type="email" name="email1"/> @ <input type="text" name="email2"/>
-						<select name="email" id="email">
+						<input type="email" name="email1"/> @
+						<select name="email" id="email2">
                               <option value="">직접입력</option>
                               <option value="gmail.com">gamil.com</option>
                               <option value="naver.com">naver.com</option>
@@ -94,7 +94,7 @@
 				<tr>
 					<td>주소</td>
 					<td>
-						<input type="text" name="addr1"/> 
+						<input type="text" name="addr"/> 
 						<input type="submit" name="addr_search" value="주소 검색"/>
 					</td>
 				</tr>
@@ -114,6 +114,6 @@
 	</aside>
 </div>
 <%@ include file="../common/footer.jsp" %>
-<script src= "../../js/join.js"></script>
+<script src= "../../js/user/join.js"></script>
 </body>
 </html>

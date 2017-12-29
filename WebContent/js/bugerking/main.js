@@ -1,5 +1,4 @@
 /**
- * 
  */
 function init() {
 	var arr=['bugerking','kakao','bitcamp','sktellecom','lotto'];
@@ -9,8 +8,10 @@ function init() {
 			location.href="../"+this.id+"main.jsp";
 		},false);
 	}
+	document.querySelector('#bugerking_order_btn')
+	.addEventListener('click',order,false);
 }
-function move() {
-	
+function order(){
+	document.querySelector('#order_form').submit();
 }
-window.addEventListener("load", init, false);
+window.addEventListener("load",init,false);

@@ -19,6 +19,7 @@ function checkDuplclick(e) {
 	alert(joinId +'님 가입을 축하드립니다.');
 	sessionStorage.setItem('id',joinId);
 	sessionStorage.setItem('pass',joinPass);
+	document.querySelector('#join_form').submit();
 	
 }
 window.addEventListener("load",init,false);

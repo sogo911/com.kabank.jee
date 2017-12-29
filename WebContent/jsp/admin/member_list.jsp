@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import= "java.sql.*" %>
 <%@ page import= "java.util.*" %>
+<%@ page import="com.kabank.jee.domain.MemberBean" %>
 <%
 Statement stmt = null;
 Connection conn = null;
 ResultSet rs = null;
 String sql = "";
+List<MemberBean> result = new ArrayList<>();
 try{
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	conn = DriverManager
@@ -20,14 +22,15 @@ try{
 	}
 	boolean exist = false;
 	for(String s : list){
-		if(!s.equalsIgnoreCase("member")){
+		if(s.equalsIgnoreCase("member")){
 			exist = true;
 			break;
 		}
 	}
 		
-	if(exist){
-		stmt.executeUpdate("REATE TABLE Member("
+	if(!exist){
+		stmt.executeUpdate(
+				"CREATE TABLE Member("
 				+"id VARCHAR2(20) PRIMARY KEY,"
 				+"pass VARCHAR2(20),"
 				+"name VARCHAR2(20),"
@@ -35,12 +38,30 @@ try{
 				+"phone VARCHAR2(20),"
 				+"email VARCHAR2(20),"
 				+"profile VARCHAR2(20),"
-				+"addr VARCHAR2(20),"
+				+"addr VARCHAR2(20)"
 							+")");
+	}else{
+		rs = stmt.executeQuery(
+			"SELECT id, pass, name, ssn, phone, email, profile, addr"+
+			" FROM Member;");
+		
+		while(rs.next()){			//rs.next()있는 만큼만 돌리는 것.
+			MemberBean m = new MemberBean();
+			String id = rs.getString("id");
+			String name = rs.getString("name");
+			String ssn = rs.getString("ssn");
+			String phone = rs.getString("phone");
+			String email = rs.getString("email");
+			String addr = rs.getString("addr");
+			m.setId(id);
+			m.setName(name);
+			m.setName(ssn);
+			m.setName(phone);
+			m.setName(email);
+			m.setName(addr);
+			result.add(m);
+		}
 	}
-					
-				
-	
 }catch(Exception e){
 	e.printStackTrace();
 }finally{
@@ -93,34 +114,30 @@ try{
 				<th>이메일</th>
 				<th>주 소</th>
 			</tr>
-			<tr>
-				<td>1</td>
-				<td>hong</td>
-				<td>홍길동</td>
-				<td>1993-03-02</td>
-				<td>남</td>
-				<td>010-0000-0000</td>
-				<td>ㅇㅇㅇ@ㅇㅇㅇ</td>
-				<td>경기도 김포시</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>kim</td>
-				<td>김유신</td>
-				<td>1993-03-02</td>
-				<td>남</td>
-				<td>010-0000-0000</td>
-				<td>ㅇㅇㅇ@ㅇㅇㅇ</td>
-				<td>경기도 김포시</td>
-			</tr>
+			<%
+			for(int i=0; i<result.size(); i++){
+				%>
+				<tr>
+					<td>00</td>
+					<td><%= result.get(i).getId()%></td>
+					<td><%= result.get(i).getName()%></td>
+					<td><%= result.get(i).getSsn()%></td>
+					<td><%= result.get(i).getPhone()%></td>
+					<td><%= result.get(i).getEmail()%></td>
+					<td><%= result.get(i).getAddr()%></td>
+				</tr>
+			<%	
+			}
+			%>
+			
 			<tr>
 				<td id="add_member_td" colspan="8">
-					<button id="add_member_btn">추가</button>
+					<button id="member_register_form_btn">추가</button>
 				</td>
 			</tr>
 		</table>
 	</section>
 </div>		
 </body>
-<script src= "../../js/member.js"></script>
+<script src= "../../js/admin/member_list.js"></script>
 </html>

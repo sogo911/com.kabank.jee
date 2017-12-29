@@ -2,7 +2,15 @@ package com.kabank.jee.domain;
 
 public class MemberBean {
 	private String name, id, pass, ssn, 
-					phone, email, profile, addr;
+					phone, email, profile, addr, gender;
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	public String getName() {
 		return name;
@@ -72,7 +80,7 @@ public class MemberBean {
 	public String toString() {
 		return "MemberBean [이름:" + name + ", ID:" + id + ", 비밀번호:" + pass + ", "
 				+ "주민번호(생년월일-첫번째 번호):" + ssn + ", 핸드폰 번호:" + phone
-				+ ", 이메일:" + email + ", 프로필사진:" + profile + ", 주소:" + addr + "]";
+				+ ", 이메일:" + email + ", 프로필사진:" + profile + ", 주소:" + addr +", 성별:" + gender +"]";
 	}
 	
 }

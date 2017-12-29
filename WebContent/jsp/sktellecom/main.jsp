@@ -14,5 +14,5 @@
 
 <%@ include file="../common/footer.jsp" %>
 </body>
-<script src="../js/sktellecom.js"></script>
+<script src="../js/sktellecom/main.js"></script>
 </html>

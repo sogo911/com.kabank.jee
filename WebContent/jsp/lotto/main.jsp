@@ -17,5 +17,5 @@
 
 <%@ include file="../common/footer.jsp" %>
 </body>
-<script src="../js/lotto.js"></script>
+<script src="../js/lotto/main.js"></script>
 </html>

@@ -20,14 +20,14 @@ try{
 	}
 	boolean exist = false;
 	for(String s : list){
-		if(!s.equalsIgnoreCase("member")){
+		if(s.equalsIgnoreCase("member")){
 			exist = true;
 			break;
 		}
 	}
 		
-	if(exist){
-		stmt.executeUpdate("REATE TABLE Member("
+	if(!exist){
+		stmt.executeUpdate("CREATE TABLE Member("
 				+"id VARCHAR2(20) PRIMARY KEY,"
 				+"pass VARCHAR2(20),"
 				+"name VARCHAR2(20),"
@@ -35,7 +35,7 @@ try{
 				+"phone VARCHAR2(20),"
 				+"email VARCHAR2(20),"
 				+"profile VARCHAR2(20),"
-				+"addr VARCHAR2(20),"
+				+"addr VARCHAR2(20)"
 							+")");
 	}
 					
@@ -71,22 +71,23 @@ try{
 	</aside>
 	<section id="admin_section">
 		<h1>회원등록</h1>
+		<form id="register_form" action="member_register.jsp">
 		<table id="admin_section_table">
 			<tr>
 				<td>ID : </td>
-				<td><input type="text"></input></td>
+				<td><input name="id" type="text"></input></td>
 			</tr>
 			<tr>
 				<td>이 름 : </td>
-				<td><input type="text"></input></td>
+				<td><input name="name" type="text"></input></td>
 			</tr>
 			<tr>
 				<td>생년월일 : </td>
-				<td><input type="date"></input></td>
+				<td><input name="ssn" type="date"></input></td>
 			</tr>
 			<tr>
 				<td>성 별 : </td>
-				<td><input style="width: 30px" type="text"></input></td>
+				<td><input name="gender" style="width: 30px" type="text"></input></td>
 			</tr>
 			<tr>
 				<td>핸드폰번호 : </td>
@@ -94,12 +95,12 @@ try{
 					<input type="radio" name=tel value="SKT"/>SKT
 					<input type="radio" name=tel value="KT" />KT
 					<input type="radio" name=tel value="LG" />LG
-					<select>
+					<select name="phone1">
 						<option value="">선택</option>
 						<option value="010">010</option>
 						<option value="011">011</option>
 						<option value="02">02</option>
-					</select> - <input style="width: 40px" pattern="[0-9]{4}" type="tel"/> - <input style="width: 40px" pattern="[0-9]{4}" type="text"/>
+					</select> - <input style="width: 40px" pattern="[0-9]{4}" name="phone2" type="tel"/> - <input style="width: 40px" pattern="[0-9]{4}" name="phone3" type="text"/>
 				</td>
 			</tr>
 			<tr>
@@ -117,18 +118,19 @@ try{
 			<tr>
 				<td>주 소 : </td>
 				<td>
-					<input style="width: 300px" type="text"/> 
+					<input style="width: 300px" name="addr" type="text"/> 
 					<input type="submit" value="주소 검색"/>
 				</td>
 			</tr>
 			<tr>
 				<td id="add_member_td" colspan="2">
-				<button id="add_member_btn">추가</button>
+				<button id="member_register_btn">추가</button>
 				</td>
 			</tr>
 		</table>
+		</form>
 	</section>
 </div>		
 </body>
-<script src= "../../js/member.js"></script>
+<script src= "../../js/admin/member_register_form.js"></script>
 </html>

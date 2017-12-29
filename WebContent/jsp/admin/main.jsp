@@ -34,5 +34,5 @@
 	</section>
 </div>		
 </body>
-<script src= "../../js/admin.js"></script>
+<script src= "../../js/admin/main.js"></script>
 </html>

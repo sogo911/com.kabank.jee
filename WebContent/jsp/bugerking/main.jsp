@@ -112,5 +112,5 @@
 </section>						
 <%@ include file="../common/footer.jsp" %>
 </body>
-<script src="../../js/bugerking.js"></script>
+<script src="../../js/bugerking/main.js"></script>
 </html>
